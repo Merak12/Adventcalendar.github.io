@@ -1,0 +1,201 @@
+
+body{
+    margin: 0%;
+    padding: 0%;
+    background: radial-gradient(circle at 50% 55%, hsl(212, 55%, 53%), hsl(212, 55%, 43%), hsl(212, 55%, 23%));
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+#tree{
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+#canvas{
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+}
+.red{
+    fill: #aa1231;
+    -webkit-animation: 0.6s red-flash ease-in-out infinite;
+    animation: 0.6s red-flash ease-in-out infinite;
+}
+@-webkit-keyframes red-flash{
+    40%{
+        fill: #ea385c;
+    }
+    80%{
+        fill: #aa1231;
+    }
+}
+@keyframes red-flash{
+    40%{
+        fill: #ea385c;
+    }
+    80%{
+        fill: #aa1231;
+    }
+}
+.gold-lt{
+    fill: #c1881c;
+    -webkit-animation: 0.6s gold-lt-flash ease-in-out infinite;
+    animation: 0.6s gold-lt-flash ease-in-out infinite;
+}
+@-webkit-keyframes gold-lt-flash{
+    40%{
+        fill: #e7b75c;
+    }
+    80%{
+        fill: #c1881c;
+    }
+}
+@keyframes gold-lt-flash{
+    40%{
+        fill: #e7b75c;
+    }
+    80%{
+        fill: #c1881c;
+    }
+}
+.blue-lt{
+    fill: #1f3e64;
+    -webkit-animation: 0.6s blue-lt-flash ease-in-out infinite;
+    animation: 0.6s blue-lt-flash ease-in-out infinite;
+}
+@-webkit-keyframes blue-lt-flash{
+    40%{
+        fill: #386fb1;
+    }
+    80%{
+        fill: #1f3e64;
+    }
+}
+@keyframes blue-lt-flash{
+    40%{
+        fill: #386fb1;
+    }
+    80%{
+        fill: #1f3e64;
+    }
+}
+.blue-dk{
+    fill: #0f1f2f;
+    -webkit-animation: 0.6s blue-dk-flash ease-in-out infinite;
+    animation: 0.6s blue-dk-flash ease-in-out infinite;
+}
+@-webkit-keyframes blue-dk-flash{
+    40%{
+        fill: #28527c;
+    }
+    80%{
+        fill: #0f1f2f;
+    }
+}
+@keyframes blue-dk-flash{
+    40%{
+        fill: #28527c;
+    }
+    80%{
+        fill: #0f1f2f;
+    }
+}
+.gold-dk{
+    fill: #69512a;
+    -webkit-animation: 0.6s gold-dk-flash ease-in-out infinite;
+    animation: 0.6s gold-dk-flash ease-in-out infinite;
+}
+@-webkit-keyframes gold-dk-flash{
+    40%{
+        fill: #b28947;
+    }
+    80%{
+        fill: #69512a;
+    }
+}
+@keyframes gold-dk-flash{
+    40%{
+        fill: #b28947;
+    }
+    80%{
+        fill: #69512a;
+    }
+}
+.g1{
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+.g2{
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+.g3{
+    -webkit-animation-delay: 0.8s;
+    animation-delay: 0.8s;
+}
+
+.floating-button {
+    position: fixed; /* Fija la posición en la esquina */
+    bottom: 45px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #ff5fad; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma circular */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    display: flex; /* Centra la flecha */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-size: 30px; /* Tamaño de la fuente para la flecha */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    box-shadow: 0 4px 8px rgba(243, 2, 98, 0.742); /* Sombra para dar profundidad */
+    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave para efectos */
+}
+
+/* Add this to your existing treee.css */
+.grass {
+    position: absolute;
+    bottom: 0; /* Position it at the bottom of the container */
+    left: 0;
+    width: 100%; /* Full width of the container */
+    height: 3%; /* Adjust height as needed */
+    background: linear-gradient(to top, #1d9b21, #66bb6a); /* Grass color gradient */
+    border-radius: 0 0 10px 10px; /* Rounded top corners */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+
+.floating-button {
+    position: fixed; /* Fija la posición en la esquina */
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #9c75ff; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma circular */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    display: flex; /* Centra la flecha */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-size: 30px; /* Tamaño de la fuente para la flecha */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    box-shadow: 0 4px 8px rgba(70, 2, 243, 0.742); /* Sombra para dar profundidad */
+    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave para efectos */
+}
+
+.floating-button:hover {
+    background-color: #fdffff; /* Color más claro al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.floating-button:active {
+    transform: scale(0.95); /* Efecto de "presionar" el botón */
+}

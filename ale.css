@@ -1,0 +1,260 @@
+
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+.snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position: fixed;
+    top: -10%;
+    z-index: 9999;
+    user-select: none;
+    cursor: default;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
+}
+
+/* Animaciones */
+@keyframes snowflakes-fall {
+    0% {
+        top: -10%
+    }
+    100% {
+        top: 100%
+    }
+}
+
+@keyframes snowflakes-shake {
+    0%, 100% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(80px)
+    }
+}
+
+/* Posiciones diferentes para cada copo */
+.snowflake:nth-of-type(0) {
+    left: 1%;
+    animation-delay: 0s, 0s;
+}
+.snowflake:nth-of-type(1) {
+    left: 10%;
+    animation-delay: 1s, 1s;
+}
+.snowflake:nth-of-type(2) {
+    left: 20%;
+    animation-delay: 6s, 0.5s;
+}
+.snowflake:nth-of-type(3) {
+    left: 30%;
+    animation-delay: 4s, 2s;
+}
+.snowflake:nth-of-type(4) {
+    left: 40%;
+    animation-delay: 2s, 2s;
+}
+.snowflake:nth-of-type(5) {
+    left: 50%;
+    animation-delay: 8s, 3s;
+}
+.snowflake:nth-of-type(6) {
+    left: 60%;
+    animation-delay: 6s, 2s;
+}
+.snowflake:nth-of-type(7) {
+    left: 70%;
+    animation-delay: 2.5s, 1s;
+}
+.snowflake:nth-of-type(8) {
+    left: 80%;
+    animation-delay: 1s, 0s;
+}
+.snowflake:nth-of-type(9) {
+    left: 90%;
+    animation-delay: 3s, 1.5s;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: dense;
+    gap: 15px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+
+.day {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px; /* Esquinas ligeramente redondeadas para todos */
+    transition: filter 0.3s ease; /* Para animar el cambio de filtro */
+}
+
+.day:hover {
+    filter: grayscale(100%); /* Convierte la imagen a blanco y negro al pasar el mouse */
+}
+
+
+.day:nth-child(1) {
+    background-image: url('images/Ale1.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 180px; /* Altura del elemento */
+}
+
+.day:nth-child(2) {
+    background-image: url('images/Ale2.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: auto; /* Más estrecho */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.day:nth-child(3) {
+    background-image: url('images/Ale3.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.day:nth-child(4) {
+    background-image: url('images/Ale7.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: auto; /* Más estrecho */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.day:nth-child(5) {
+    background-image: url('images/Ale88.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 160px;
+}
+
+.day:nth-child(6) {
+    background-image: url('images/Ale111.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 92%;
+}
+
+.day:nth-child(7) {
+    background-image: url('images/Ale77.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: auto; /* Más estrecho */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.day:nth-child(8) {
+    background-image: url('images/Ale0.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: auto; /* Más estrecho */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.day:nth-child(9) {
+    background-image: url('images/Ale9.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 140px;
+}
+
+.day:nth-child(10) {
+    background-image: url('images/Ale4.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: auto; /* Más estrecho */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.day:nth-child(11) {
+    background-image: url('images/Ale99.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 155px;
+}
+
+.day:nth-child(12) {
+    background-image: url('images/gold.jpg'); /* Ruta a la imagen */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: auto; /* Más estrecho */
+    height: auto;/*300px;  Más bajo */
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+/* Estilos para cuando están abiertos */
+.day.opened {
+    transform: rotateY(180deg);
+}
+
+.message {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    width: 80%;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.day.opened .message {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+}

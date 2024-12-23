@@ -1,0 +1,741 @@
+.floating-button {
+    position: fixed; /* Fixed position to stay in the corner */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    background-color: #4101e2; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular shape */
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    display: flex; /* Center the arrow */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 24px; /* Font size for the arrow */
+    text-decoration: none; /* Remove underline from link */
+    box-shadow: 0 4px 8px rgba(70, 2, 243, 0.742); /* Shadow for depth */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.floating-button:hover {
+    background-color: #fdffff; /* Darker shade on hover */
+}
+
+
+.controls {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Estilo del switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Esconder el checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo del slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px; /* Esquinas redondeadas */
+}
+
+/* Estilo del círculo dentro del switch */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; /* Círculo */
+}
+
+/* Cambiar el color del slider cuando está activado */
+input:checked + .slider {
+    background-color: #2196F3; /* Color del switch activado */
+}
+
+/* Mover el círculo cuando está activado */
+input:checked + .slider:before {
+    transform: translateX(26px); /* Mueve el círculo a la derecha */
+}
+
+/* Colores neón para el acuario */
+/* Colores neón para el acuario */
+.aquarium.neon {
+    background: linear-gradient(to bottom, #ff00ff, #00ffff); /* Colores neón */
+}
+
+.aquarium.neon .sand {
+    background: #0044ff; /* Color de la arena en modo neón */
+}
+
+.aquarium.neon .fish {
+    background-color: #ff007f; /* Color de los peces en modo neón */
+}
+
+.aquarium.neon .fish1 {
+    background-color: #8eff31; /* Color específico para fish1 en modo neón */
+}
+
+.aquarium.neon .fish2 {
+    background-color: #ff4500; /* Color específico para fish2 en modo neón */
+}
+
+.aquarium.neon .fish3 {
+    background-color: #00fa9a; /* Color específico para fish3 en modo neón */
+}
+
+.aquarium.neon .starfish {
+    background-color: #07ffbd;
+}
+
+.aquarium.neon .pufferfish {
+    background-color: #ff348c;
+}
+
+.aquarium.neon .pufferfish.fin {
+    background-color: #00fa9a;
+}
+.aquarium.neon .pufferfish .mouth {
+    background-color: #75ffff;
+}
+
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a40; /* Fondo del "océano" */
+    overflow: hidden;
+}
+
+.aquarium {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    background: linear-gradient(to bottom, #1a75ff, #004080);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* Granos de arena */
+.sand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #f4e1b2; /* Color de la arena */
+    z-index: 1;
+    overflow: hidden;
+}
+
+.sand .grain {
+    position: absolute;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #e4c07e;
+    border-radius: 50%;
+    animation: move-sand 5s linear infinite;
+}
+
+/* Animación de movimiento de la arena */
+@keyframes move-sand {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(50px) translateY(0);
+    }
+}
+
+/* Efecto al pasar el cursor sobre el acuario */
+.aquarium:hover .sand .grain {
+    animation: move-sand-hover 10s linear forwards;
+}
+
+@keyframes move-sand-hover {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(20px) translateY(20px); /* Movimiento suave */
+    }
+}
+
+
+/* Peces */
+.fish {
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    background-color: #ff6347; /* Cuerpo del pez */
+    border-radius: 50%;
+    animation: swim-random 15s ease-in-out infinite;
+    transform: scaleX(-1); /* Los peces miran hacia la izquierda al inicio */
+    
+}
+
+/* Cola del pez */
+.fish:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    width: 20px;
+    height: 20px;
+    background-color: #68fcff; /* Color de la cola */
+    border-radius: 0 50% 50% 0;
+    transform: translateY(-50%) rotate(-30deg);
+}
+
+/* Ojo del pez */
+.fish:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 5px;
+    height: 5px;
+    background-color: white; /* Color del ojo */
+    border-radius: 50%;
+}
+
+/* Variaciones de peces */
+.fish1 {
+    top: 20%;
+    left: -100px;
+    animation-delay: 2s;
+}
+
+.fish2 {
+    top: 50%;
+    left: -150px;
+    background-color: #ffa500;
+    animation-delay: 4s;
+}
+
+.fish2:before {
+    background-color: #ff8c00;
+}
+
+.fish3 {
+    top: 80%;
+    left: -200px;
+    background-color: #00fa9a;
+    animation-delay: 6s;
+}
+
+.fish3:before {
+    background-color: #2e8b57;
+}
+
+.fish4 {
+    top: 80%;
+    left: -200px;
+    background-color: #fafa00;
+    animation-delay: 6s;
+}
+
+.fish4:before {
+    background-color: #91ea00;
+}
+
+/* Estilo específico para el pez juanxito */
+.juanxito {
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para la imagen del pez */
+.juanxito img {
+    width: 100%; /* Asegúrate de que la imagen se ajuste al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+.nemo {
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para la imagen del pez */
+.nemo img {
+    width: 100%; /* Asegúrate de que la imagen se ajuste al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Tamaños específicos */
+.nemo-small {
+    width: 30px; /* Tamaño pequeño */
+}
+
+.nemo-medium {
+    width: 50px; /* Tamaño mediano */
+}
+
+.nemo-large {
+    width: 70px; /* Tamaño grande */
+}
+
+
+.horse {
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Estilo para la imagen del caballo */
+.horse img {
+    width: 100%; /* Asegúrate de que la imagen se ajuste al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+.flip-horse img {
+    transform: scaleX(-1); /* Flip horizontally */
+}
+
+/* Tamaños específicos */
+.horse-small {
+    width: 150px; /* Tamaño pequeño */
+    top: 50px; /* Ajusta la posición vertical */
+    left: 1100px; /* Ajusta la posición horizontal */
+}
+
+.horse-medium {
+    width: 120px; /* Tamaño mediano */
+    top: 300px; /* Ajusta la posición vertical */
+    left: 800px; /* Ajusta la posición horizontal */
+}
+
+.horse-large {
+    width: 70px; /* Tamaño grande */
+    top: 20px; /* Ajusta la posición vertical */
+    left: 80px; /* Ajusta la posición horizontal */
+}
+
+
+.alga {
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.alga img {
+    transform:scaleX(-1);
+}
+
+.alga-small {
+    width: 300px; /* Tamaño pequeño */
+    top: 10px; /* Ajusta la posición vertical */
+    left: 1100px; /* Ajusta la posición horizontal */
+}
+
+.alga-medium {
+    width: 120px; /* Tamaño mediano */
+    top: 10px; /* Ajusta la posición vertical */
+    left: 350px; /* Ajusta la posición horizontal */
+}
+
+.alga2{
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    left: 800px;
+    top: 100px;
+}
+
+.alga2 img {
+    transform:scaleX(-1);
+}
+
+.alga3 {
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    width: 200px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    left: 450px;
+    top: 100px;
+}
+
+.alga3 img {
+    transform:scaleX(-1);
+}
+
+.coral {
+    position: absolute; /* Asegúrate de que la imagen se posicione correctamente */
+    width: 10px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    left: 10px;
+    top: 200px;
+}
+
+.coral img {
+    transform:scaleX(-1);
+}
+
+
+/* Animaciones */
+@keyframes swim-random {
+    0% {
+        transform: translate(0, 0) scaleX(1); /* Pez se mueve hacia la derecha */
+    }
+    25% {
+        transform: translate(50vw, 10px) scaleX(1); /* Pez sube y avanza */
+    }
+    50% {
+        transform: translate(40vw, -20px) scaleX(-1); /* Pez se invierte y gira */
+    }
+    75% {
+        transform: translate(10vw, 30px) scaleX(-1); /* Pez se mueve más lento */
+    }
+    100% {
+        transform: translate(0, 0) scaleX(1); /* Regresa a su posición inicial */
+    }
+}
+
+.starfish {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #fd5696;
+    clip-path: polygon(50% 5%, 62% 30%, 98% 35%, 72% 50%, 78% 75%, 50% 60%, 22% 75%, 28% 50%, 2% 35%, 38% 30%);
+    transform: rotate(0deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px; /* Redondear los extremos */
+
+}
+
+/* Sombras */
+.starfish {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Burbujas */
+.bubble {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: float 1s ease-in forwards; /* Cambia a 1s para que suba más rápido */
+    opacity: 0; /* Comienza invisible */
+}
+
+/* Animación de burbuja */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px); /* Sube 100px */
+        opacity: 0; /* Se desvanece */
+    }
+}
+/* Jellyfish Styles */
+.jellyfish {
+    transform: rotate(-5deg);
+    position: absolute;
+    display: block;
+    width: 100px; /* Adjust width as needed */
+}
+
+.body, .stripes01, .stripes02 {
+    position: absolute;
+    display: block;
+    height: 100px; /* Reduced height */
+    background-color: #8836fa; /* Jellyfish body color */
+    border-radius: 50% 50% 20% 20% / 70% 70% 40% 40%;
+    box-shadow: inset 0px 0px 30px #af7ac5, 0px 0px 6px 0px #af7ac5; /* Shadow */
+}
+
+.body {
+    top: 100px; /* Adjusted for smaller size */
+    left: 200px; /* Adjusted for smaller size */
+    width: 120px; /* Reduced width */
+    border-bottom: 4px solid #af7ac5; /* Jellyfish body highlight */
+
+    .stripes01, .stripes02 {
+        border-radius: 50% 50% 20% 20% / 70% 70% 40% 40%;
+        border-left: 4px solid #af7ac5; /* Jellyfish body highlight */
+        border-right: 4px solid #af7ac5; /* Jellyfish body highlight */
+    }
+
+    .stripes01 {
+        width: 100px; /* Reduced width */
+        left: 10px; /* Adjusted for smaller size */
+    }
+
+    .stripes02 {
+        width: 80px; /* Reduced width */
+        left: 20px; /* Adjusted for smaller size */
+    }
+}
+
+.tentacles {
+    top: 130px; /* Adjusted for smaller size */
+    position: absolute;
+    display: block;
+    left: 210px; /* Adjusted for smaller size */
+
+    .tentA, .tentB, .tentC, .tentD, .tentE {
+        border-radius: 100%;
+        position: absolute;
+        display: block;
+        border: 10px solid transparent;
+    }
+
+    .tentA {
+        border-radius: 80% 100% 100% 100%;
+        height: 150px; /* Reduced height */
+        width: 80px; /* Reduced width */
+        border-left-color: #00d4ff; /* Tentacle color */
+        border-bottom-width: 0px;
+        transform: rotate(25deg);
+        opacity: 0.4; /* Tentacle opacity */
+    }
+
+    .tentB {
+        height: 180px; /* Reduced height */
+        width: 100px; /* Reduced width */
+        border-right-color: #00d4ff; /* Tentacle color */
+        top: -20px; /* Adjusted for smaller size */
+        left: -50px; /* Adjusted for smaller size */
+        transform: rotate(-10deg);
+        opacity: 0.4; /* Tentacle opacity */
+    }
+
+    .tentC {
+        height: 200px; /* Reduced height */
+        width: 80px; /* Reduced width */
+        border-right-color: #00d4ff; /* Tentacle color */
+        top: -30px; /* Adjusted for smaller size */
+        left: -10px; /* Adjusted for smaller size */
+        opacity: 0.4; /* Tentacle opacity */
+    }
+
+    .tentD {
+        border-radius: 80% 100% 100% 100%;
+        height: 180px; /* Reduced height */
+        width: 120px; /* Reduced width */
+        border-left-color: #00d4ff; /* Tentacle color */
+        border-bottom-width: 0px;
+        transform: rotate(25deg);
+        opacity: 0.4; /* Tentacle opacity */
+        left: 30px; /* Adjusted for smaller size */
+        top: -20px; /* Adjusted for smaller size */
+    }
+
+    .tentE {
+        border-radius: 80% 100% 100% 100%;
+        height: 150px; /* Reduced height */
+        width: 100px; /* Reduced width */
+        left: -10px; /* Adjusted for smaller size */
+        border-right-color: #00d4ff; /* Tentacle color */
+        border-bottom-width: 0px;
+        transform: rotate(-35deg);
+        opacity: 0.4; /* Tentacle opacity */
+    }
+}
+
+.middle, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .ten {
+    position: absolute;
+    display: block;
+}
+
+.middle {
+    left: 200px;
+    top: 290px;
+    opacity: 0.7;
+
+    .a, .b, .c, .d, .e {
+        position: absolute;
+        display: block;
+        border-radius: 100%;
+        height: 100%;
+        width: 30%;
+        box-shadow: inset 0px 0px 0px #ff4bff, 0px 0px 20px 0px #00d4ff; /* $midInner, $midOuter */
+    }
+
+    .a { left: -20%; }
+    .b { top: 10%; left: 5%; }
+    .c { top: 15%; left: 30%; }
+    .d { top: 10%; left: 55%; }
+    .e { left: 80%; }
+}
+
+
+.tentA, .tentB, .tentC, .tentD, .tentE {
+    animation: tents 3s infinite;
+}
+
+@keyframes tents {
+    0% { transform: scale(1.03, 0.95); }
+    30% { transform: scale(1, 1.1); }
+    35% { transform: scale(1, 1.1); }
+    100% { transform: scale(1.03, 0.95); }
+}
+
+.body {
+    animation: body 3s infinite;
+}
+
+@keyframes body {
+    0% { transform: scale(1.005, 0.95); top: 120px; }
+    30% { transform: scale(1, 1); top: 100px; }
+    35% { transform: scale(1, 1); top: 100px; }
+    100% { transform: scale(1.005, 0.95); top: 120px; }
+}
+
+/* Pez globo */
+.pufferfish {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #ffcc00; /* Color amarillo del pez globo */
+    border-radius: 50%;
+    animation: swim-random-pufferfish 30s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    top:300px;
+}
+
+/* Ojos */
+.pufferfish .eye {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #000;
+    border-radius: 50%;
+    top: 40%;
+}
+
+.pufferfish .left-eye {
+    left: 25%;
+}
+
+.pufferfish .right-eye {
+    right: 25%;
+}
+
+/* Boca */
+.pufferfish .mouth {
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #ff3776;
+    border-radius: 50%;
+}
+
+/* Espinas del pez globo */
+.pufferfish .spine {
+    position: absolute;
+    width: 15px;
+    height: 3px;
+    background-color: #780aff;
+    border-radius: 5px;
+    animation: spine-move 3s infinite ease-in-out;
+}
+
+.pufferfish .spine1 { top: 20%; left: 5%; transform: rotate(70deg); }
+.pufferfish .spine2 { top: 40%; left: -10%; transform: rotate(90deg); }
+.pufferfish .spine3 { top: 30%; right: -5%; transform: rotate(90deg); }
+.pufferfish .spine4 { top: 10%; right: 10%; transform: rotate(90deg); }
+.pufferfish .spine5 { top: 9%; left: 40%; transform: rotate(-45deg); }
+.pufferfish .spine6 { bottom: 10%; left: 10%; transform: rotate(-90deg); }
+.pufferfish .spine7 { bottom: 30%; right: 15%; transform: rotate(45deg); }
+.pufferfish .spine8 { bottom: 10%; right: 25%; transform: rotate(90deg); }
+
+/* Aletas (verticales) */
+.pufferfish .fin {
+    position: absolute;
+    width: 15px;
+    height: 40px;
+    background-color: #ff9933;
+    border-radius: 50%;
+    animation: fin-move 3s infinite ease-in-out;
+    transform-origin: center;
+}
+
+.pufferfish .left-fin {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: -15px; /* Adjusted to position it correctly */
+    width: 20px;
+    height: 30px; /* Adjusted height for a horizontal fin */
+    border-radius: 0 80% 0 80%; /* Keep the rounded edges */
+    background-color: #ff9933; /* Color of the fin */
+    animation: fin-move 3s infinite ease-in-out; /* Apply animation */
+}
+
+
+.pufferfish .right-fin {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 100%; /* Position it to the right of the body */
+    width: 20px;
+    height: 30px; /* Adjusted height for a horizontal fin */
+    border-radius: 80% 0 80% 0; /* Keep the rounded edges */
+    background-color: #ff9933; /* Color of the fin */
+    animation: fin-move 3s infinite ease-in-out; /* Apply animation */
+}
+
+/* Animación de las espinas */
+@keyframes spine-move {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Animación de las aletas */
+@keyframes fin-move {
+    0%, 100% {
+        transform: rotate(0deg); /* Start and end at 0 degrees */
+    }
+    50% {
+        transform: rotate(15deg); /* Rotate to 15 degrees at halfway */
+    }
+}
+
+/* Animaciones de movimiento del pez globo */
+@keyframes swim-random-pufferfish {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(150vw, 50px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}

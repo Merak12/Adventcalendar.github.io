@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <a href="..\ale.html" class="floating-button">
+        &#8594; <!-- Símbolo de flecha hacia la derecha -->
+    </a>
+    <div class="container">
+
+        <div class="slide">
+
+            
+            <div class="item" style="background-image: url(lamp.jpg);">
+                <div class="content">
+                    <div class="name">I Think They Call This Love</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button id="playButton">
+                        <i class="fa fa-play"></i>
+                    </button>
+                    <audio id="audioLove" src="lov.mp3"></audio> <!-- Add your audio file here -->
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url(ja.jpg);">
+                <div class="content">
+                    <div class="name">Eastside</div>
+                    <div class="des">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!
+                    </div>
+                    <button id="playButton">
+                        <i class="fa fa-play"></i>
+                    </button>
+                    <audio id="audioEastside" src="eastsie.mp3"></audio> <!-- Add your audio file here -->
+                </div>
+            </div>
+            
+            <div class="item" style="background-image: url(carryYouHome.jpg);">
+                <div class="content">
+                    <div class="name">Carry You Home</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button id="playButton">
+                        <i class="fa fa-play"></i>
+                    </button>
+                    <audio id="audioCarryYouHome" src="CarryYouHome.mp3"></audio>
+                </div>
+            </div>
+            
+            <div class="item" style="background-image: url(monkeys.jpg);">
+                <div class="content">
+                    <div class="name">I Wanna Be Yours</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button id="playButton">
+                        <i class="fa fa-play"></i>
+                    </button>
+                    <audio id="audioWannaBeYours" src="WannaBU.mp3"></audio>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url(september.jpg);">
+                <div class="content">
+                    <div class="name">September</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button id="playButton">
+                        <i class="fa fa-play"></i>
+                    </button>
+                    <audio id="audioSeptember" src="september.mp3"></audio>
+                </div>
+            </div>
+
+            <div class="item" style="background-image: url(auro.jpg);">
+                <div class="content">
+                    <div class="name">Just The Two Of Us</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button id="playButton">
+                        <i class="fa fa-play"></i>
+                    </button>
+                    <audio id="audioJust2" src="2ofUs.mp3"></audio>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    </div>
+
+    <script src="playlist.js"></script>
+</body>
+
+
+
+</html>
