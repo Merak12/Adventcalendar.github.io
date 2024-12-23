@@ -1,26 +1,62 @@
-
 body{
     margin: 0%;
     padding: 0%;
-    background: radial-gradient(circle at 50% 55%, hsl(212, 55%, 53%), hsl(212, 55%, 43%), hsl(212, 55%, 23%));
+    background: radial-gradient(circle at 50% 55%, hsl(234, 81%, 64%), hsl(212, 81%, 21%), hsl(212, 100%, 12%));
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
     overflow: hidden;
 }
+
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 999; 
+}
+
+.floating-button:hover {
+    background-color: #fdffff; 
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.floating-button:active {
+    transform: scale(0.95); 
+}
+
+
 #tree{
-    z-index: 1;
     width: 100vw;
     height: 100vh;
-    display: block;
     margin: 0 auto;
-    padding-top: 10px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
 }
 #canvas{
     position: absolute;
-    z-index: 2;
+    /*z-index: 2;*/
     height: 100vh;
     width: 100vw;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 .red{
     fill: #aa1231;
@@ -138,64 +174,4 @@ body{
 .g3{
     -webkit-animation-delay: 0.8s;
     animation-delay: 0.8s;
-}
-
-.floating-button {
-    position: fixed; /* Fija la posición en la esquina */
-    bottom: 45px; /* Distancia desde el fondo */
-    right: 20px; /* Distancia desde la derecha */
-    background-color: #ff5fad; /* Color del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 50%; /* Forma circular */
-    width: 60px; /* Ancho del botón */
-    height: 60px; /* Alto del botón */
-    display: flex; /* Centra la flecha */
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    font-size: 30px; /* Tamaño de la fuente para la flecha */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    box-shadow: 0 4px 8px rgba(243, 2, 98, 0.742); /* Sombra para dar profundidad */
-    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave para efectos */
-}
-
-/* Add this to your existing treee.css */
-.grass {
-    position: absolute;
-    bottom: 0; /* Position it at the bottom of the container */
-    left: 0;
-    width: 100%; /* Full width of the container */
-    height: 3%; /* Adjust height as needed */
-    background: linear-gradient(to top, #1d9b21, #66bb6a); /* Grass color gradient */
-    border-radius: 0 0 10px 10px; /* Rounded top corners */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
-}
-
-
-.floating-button {
-    position: fixed; /* Fija la posición en la esquina */
-    bottom: 20px; /* Distancia desde el fondo */
-    right: 20px; /* Distancia desde la derecha */
-    background-color: #9c75ff; /* Color del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 50%; /* Forma circular */
-    width: 60px; /* Ancho del botón */
-    height: 60px; /* Alto del botón */
-    display: flex; /* Centra la flecha */
-    justify-content: center; /* Centrado horizontal */
-    align-items: center; /* Centrado vertical */
-    font-size: 30px; /* Tamaño de la fuente para la flecha */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    box-shadow: 0 4px 8px rgba(70, 2, 243, 0.742); /* Sombra para dar profundidad */
-    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave para efectos */
-}
-
-.floating-button:hover {
-    background-color: #fdffff; /* Color más claro al pasar el mouse */
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
-}
-
-.floating-button:active {
-    transform: scale(0.95); /* Efecto de "presionar" el botón */
 }

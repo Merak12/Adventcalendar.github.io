@@ -1,24 +1,29 @@
 // acuario.js
 
-// Función para crear burbujas
 function createBubble(event) {
     const bubble = document.createElement('div');
     bubble.className = 'bubble';
     
-    // Establecer la posición de la burbuja
-    const x = event.clientX; // Posición X del cursor
-    const y = event.clientY; // Posición Y del cursor
+    // Obtener el contenedor del acuario
+    const aquarium = document.querySelector('.aquarium');
+    const aquariumRect = aquarium.getBoundingClientRect();
+
+    // Establecer la posición de la burbuja relativa al acuario
+    const x = event.clientX - aquariumRect.left; // Ajustar la posición X
+    const y = event.clientY - aquariumRect.top;  // Ajustar la posición Y
+
     bubble.style.left = `${x}px`;
     bubble.style.top = `${y}px`;
-    
+
     // Añadir la burbuja al acuario
-    document.querySelector('.aquarium').appendChild(bubble);
-    
+    aquarium.appendChild(bubble);
+
     // Eliminar la burbuja después de la animación
     setTimeout(() => {
         bubble.remove();
     }, 1000); // Tiempo de duración de la animación
 }
+
 
 // Añadir el evento de movimiento del mouse sobre el acuario
 document.querySelector('.aquarium').addEventListener('mousemove', createBubble);
