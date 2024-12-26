@@ -1,0 +1,24 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 500px;
+    grid-template-rows: 350px 350px 80px;
+    background-image: url("hola.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+    background-color: rgb(148, 205, 255);
+    position: relative; 
+    overflow: hidden; 
+}

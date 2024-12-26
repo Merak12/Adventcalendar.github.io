@@ -1,13 +1,49 @@
-body{
-    margin: 0%;
-    padding: 0%;
+body {
+    margin: 0;
+    padding: 0;
     background: radial-gradient(circle at 50% 55%, hsl(234, 81%, 64%), hsl(212, 81%, 21%), hsl(212, 100%, 12%));
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
+    background-size: cover;
+    height: 100vh;
     overflow: hidden;
+    position: relative; 
 }
 
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(100deg, #ffffff, #DFDFD4);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 255, 255, 0.4);
+    z-index: 1;
+}
+
+.twinkle {
+    animation: twinkle 1s linear infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+#canvas, #tree {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#tree {
+    z-index: 2;
+    background: transparent;
+}
 
 .floating-button {
     position: fixed;
@@ -26,152 +62,85 @@ body{
     text-decoration: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s;
     z-index: 999; 
 }
 
 .floating-button:hover {
     background-color: #fdffff; 
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    transform: scale(1.1); 
 }
 
 .floating-button:active {
     transform: scale(0.95); 
 }
 
-
-#tree{
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-
-}
-#canvas{
-    position: absolute;
-    /*z-index: 2;*/
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-}
-.red{
+.red {
     fill: #aa1231;
-    -webkit-animation: 0.6s red-flash ease-in-out infinite;
-    animation: 0.6s red-flash ease-in-out infinite;
+    animation: red-flash 0.6s ease-in-out infinite;
 }
-@-webkit-keyframes red-flash{
-    40%{
-        fill: #ea385c;
-    }
-    80%{
+
+@keyframes red-flash {
+    0%, 100% {
         fill: #aa1231;
     }
-}
-@keyframes red-flash{
-    40%{
+    50% {
         fill: #ea385c;
     }
-    80%{
-        fill: #aa1231;
-    }
 }
-.gold-lt{
+
+.gold-lt {
     fill: #c1881c;
-    -webkit-animation: 0.6s gold-lt-flash ease-in-out infinite;
-    animation: 0.6s gold-lt-flash ease-in-out infinite;
+    animation: gold-lt-flash 0.6s ease-in-out infinite;
 }
-@-webkit-keyframes gold-lt-flash{
-    40%{
-        fill: #e7b75c;
-    }
-    80%{
+
+@keyframes gold-lt-flash {
+    0%, 100% {
         fill: #c1881c;
     }
-}
-@keyframes gold-lt-flash{
-    40%{
+    50% {
         fill: #e7b75c;
     }
-    80%{
-        fill: #c1881c;
-    }
 }
-.blue-lt{
+
+.blue-lt {
     fill: #1f3e64;
-    -webkit-animation: 0.6s blue-lt-flash ease-in-out infinite;
-    animation: 0.6s blue-lt-flash ease-in-out infinite;
+    animation: blue-lt-flash 0.6s ease-in-out infinite;
 }
-@-webkit-keyframes blue-lt-flash{
-    40%{
-        fill: #386fb1;
-    }
-    80%{
+
+@keyframes blue-lt-flash {
+    0%, 100% {
         fill: #1f3e64;
     }
-}
-@keyframes blue-lt-flash{
-    40%{
+    50% {
         fill: #386fb1;
     }
-    80%{
-        fill: #1f3e64;
-    }
 }
-.blue-dk{
+
+.blue-dk {
     fill: #0f1f2f;
-    -webkit-animation: 0.6s blue-dk-flash ease-in-out infinite;
-    animation: 0.6s blue-dk-flash ease-in-out infinite;
+    animation: blue-dk-flash 0.6s ease-in-out infinite;
 }
-@-webkit-keyframes blue-dk-flash{
-    40%{
-        fill: #28527c;
-    }
-    80%{
+
+@keyframes blue-dk-flash {
+    0%, 100% {
         fill: #0f1f2f;
     }
-}
-@keyframes blue-dk-flash{
-    40%{
+    50% {
         fill: #28527c;
     }
-    80%{
-        fill: #0f1f2f;
-    }
 }
-.gold-dk{
+
+.gold-dk {
     fill: #69512a;
-    -webkit-animation: 0.6s gold-dk-flash ease-in-out infinite;
-    animation: 0.6s gold-dk-flash ease-in-out infinite;
+    animation: gold-dk-flash 0.6s ease-in-out infinite;
 }
-@-webkit-keyframes gold-dk-flash{
-    40%{
-        fill: #b28947;
-    }
-    80%{
+
+@keyframes gold-dk-flash {
+    0%, 100% {
         fill: #69512a;
     }
-}
-@keyframes gold-dk-flash{
-    40%{
+    50% {
         fill: #b28947;
     }
-    80%{
-        fill: #69512a;
-    }
-}
-.g1{
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-}
-.g2{
-    -webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s;
-}
-.g3{
-    -webkit-animation-delay: 0.8s;
-    animation-delay: 0.8s;
 }

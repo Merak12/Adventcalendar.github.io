@@ -106,132 +106,130 @@ body {
     color: white;
     font-size: 24px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-radius: 10px; /* Esquinas ligeramente redondeadas para todos */
-    transition: filter 0.3s ease; /* Para animar el cambio de filtro */
+    border-radius: 10px; 
+    transition: filter 0.3s ease; 
 }
 
 .day:hover {
-    filter: grayscale(100%); /* Convierte la imagen a blanco y negro al pasar el mouse */
+    filter: grayscale(100%); 
 }
 
 
 .day:nth-child(1) {
-    background-image: url('images/Ale1.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 180px; /* Altura del elemento */
+    background-image: url('images/Ale1.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 180px; 
 }
 
 .day:nth-child(2) {
-    background-image: url('images/Ale2.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: auto; /* Más estrecho */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/Ale2.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: auto;
     grid-column: span 1;
     grid-row: span 1;
 }
 
 .day:nth-child(3) {
-    background-image: url('images/Ale3.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/Ale3.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: auto;
     grid-column: span 2;
     grid-row: span 1;
 }
 
 .day:nth-child(4) {
-    background-image: url('images/Ale7.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: auto; /* Más estrecho */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/Ale7.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    width: auto; 
+    height: auto;
     grid-column: span 1;
     grid-row: span 1;
 }
 
 .day:nth-child(5) {
-    background-image: url('images/Ale88.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('images/Ale88.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     height: 160px;
 }
 
 .day:nth-child(6) {
-    background-image: url('images/Ale111.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('images/Ale111.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     width: 92%;
 }
 
 .day:nth-child(7) {
-    background-image: url('images/Ale77.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: auto; /* Más estrecho */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/Ale77.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: auto; 
+    height: auto;
     grid-column: span 2;
     grid-row: span 2;
 }
 
 .day:nth-child(8) {
-    background-image: url('images/Ale0.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: auto; /* Más estrecho */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/Ale0.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: auto; 
+    height: auto;
     grid-column: span 1;
     grid-row: span 1;
 }
 
 .day:nth-child(9) {
-    background-image: url('images/Ale9.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('images/Ale9.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     height: 140px;
 }
 
 .day:nth-child(10) {
-    background-image: url('images/Ale4.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: auto; /* Más estrecho */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/Ale4.jpg'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: auto; 
+    height: auto;
     grid-column: span 1;
     grid-row: span 2;
 }
 
 .day:nth-child(11) {
-    background-image: url('images/Ale99.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('images/Ale99.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
     height: 155px;
 }
 
 .day:nth-child(12) {
-    background-image: url('images/gold.jpg'); /* Ruta a la imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el elemento */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: auto; /* Más estrecho */
-    height: auto;/*300px;  Más bajo */
+    background-image: url('images/gold.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    width: auto; 
+    height: auto;
     grid-column: span 4;
     grid-row: span 2;
 }
 
-/* Estilos para cuando están abiertos */
 .day.opened {
     transform: rotateY(180deg);
 }
@@ -258,3 +256,4 @@ h1 {
     color: white;
     margin-top: 30px;
 }
+
