@@ -8,12 +8,7 @@ for (let i = 1; i <= 12; i++) {
 
     day.addEventListener('click', function() {
         if (i === 1) {
-
-            // Mostrar el widget de video
-            const videoWidget = document.getElementById('video-widget');
-            videoWidget.style.display = 'block';  // Hacer visible el widget
-
-            this.classList.toggle('opened');
+            window.location.href = 'trol/trol.html'; 
         } else if (i === 2) {
             window.location.href = 'acua/acuario.html'; 
         } else if (i === 3) {
@@ -27,13 +22,13 @@ for (let i = 1; i <= 12; i++) {
         } else if (i === 7) {
             window.location.href = 'card/card.html'; 
         } else if (i === 8) {
-            window.location.href = 'ruta/del/archivo/dia8.html'; 
+            window.location.href = 'ochio/ochio.html'; 
         } else if (i === 9) {
             window.location.href = 'ruta/del/archivo/dia9.html';
         } else if (i === 10) {
             window.location.href = 'room/room.html'; 
         } else if (i === 11) {
-            window.location.href = 'ruta/del/archivo/dia11.html'; 
+            window.location.href = 'bubble/bubble.html'; 
         } else if (i === 12) {
             window.location.href = 'ruta/del/archivo/dia12.html'; 
         }
@@ -42,9 +37,5 @@ for (let i = 1; i <= 12; i++) {
     container.appendChild(day);
 }
 
-const closeButton = document.getElementById('close-video');
-closeButton.addEventListener('click', function() {
-    const videoWidget = document.getElementById('video-widget');
-    videoWidget.style.display = 'none';  
-});
+
     

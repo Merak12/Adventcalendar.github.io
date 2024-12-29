@@ -17,6 +17,35 @@ body {
     cursor: pointer;
     background-image: radial-gradient(circle, #171424, #000);
 }
+
+.floating-button {
+    position: fixed; /* Fija la posición en la esquina */
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #9c75ff; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma circular */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    display: flex; /* Centra la flecha */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-size: 30px; /* Tamaño de la fuente para la flecha */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    box-shadow: 0 4px 8px rgba(70, 2, 243, 0.742); /* Sombra para dar profundidad */
+    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave para efectos */
+}
+
+.floating-button:hover {
+    background-color: #fdffff; 
+    transform: scale(1.1); 
+}
+
+.floating-button:active {
+    transform: scale(0.95); 
+}
+
 .face {
     position: absolute;
 }

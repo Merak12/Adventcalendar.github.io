@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gumball Machine</title>
+    <link rel="stylesheet" href="bubble.css">
+</head>
+<body>
+    <a href="..\ale.html" class="floating-button">
+        &#8594; <!-- Símbolo de flecha hacia la derecha -->
+    </a>
+    <div class="container">
+        <h1>Para mi chicle</h1>
+        <h1>🩶 🧡 🩷 🩵 💜 💙</h1>  
+        <div class="machine">
+            <div class="glass">
+                <div class="gumball" style="background-color: #FF6F61;"></div>
+                <div class="gumball" style="background-color: #6B5B95;"></div>
+                <div class="gumball" style="background-color: #88B04B;"></div>
+                <div class="gumball" style="background-color: #F7CAC9;"></div>
+                <div class="gumball" style="background-color: #92A8D1;"></div>
+                <div class="gumball" style="background-color: #955251;"></div>
+                <div class="gumball" style="background-color: #B565A7;"></div>
+                <div class="gumball" style="background-color: #009B77;"></div>
+                <div class="gumball" style="background-color: #DD4124;"></div>
+                <div class="gumball" style="background-color: #D65076;"></div>
+                <div class="gumball" style="background-color: #45B8AC;"></div>
+                <div class="gumball" style="background-color: #EFC050;"></div>
+                <div class="gumball" style="background-color: #5B5EA6;"></div>
+                <div class="gumball" style="background-color: #9B2335;"></div>
+                <div class="gumball" style="background-color: #BC243C;"></div>
+                <div class="gumball" style="background-color: #C3447A;"></div>
+            </div>
+            <button id="dispenseButton"></button>
+        </div>
+        <div id="dispensedGumballContainer">
+            <div id="gumballSlot"></div>
+        </div>
+        <div id="widgetContainer" class="hidden">
+            <div id="messageWidget"></div>
+        </div>
+    </div>
+    <script src="bubble.js"></script>
+</body>
+</html>

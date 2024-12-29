@@ -22,7 +22,7 @@ const levels = [
     { 
         correct: 2, 
         images: ["imgG/hela1.jpg", "imgG/hela11.jpg", "imgG/helaa.jpg", "imgG/helai.jpg"],
-        message: "¡AAAAAAA! Me derrito por ti :)" 
+        message: "¡AAAAAAA! Esoo es el único postre que se derreti como yo cuando te veooo :)" 
     },
     { 
         correct: 1, 
@@ -114,7 +114,7 @@ function endGame() {
     resultContainer.innerHTML = "";
 
     const finalMessage = document.createElement("p");
-    finalMessage.textContent = "¡Has completado todos los niveles! Así que la pista es... A";
+    finalMessage.textContent = "¡Has completado todos los niveles! Así que la pista es... 7";
     resultContainer.appendChild(finalMessage);
 
     const gifContainer = document.createElement("div");
