@@ -281,7 +281,7 @@ h2 {
 }
 
 .password-modal-content {
-    background: white;
+    background: rgb(217, 0, 0);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -304,6 +304,7 @@ h2 {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: #e80000;
 }
 
 .password-modal h2 {

@@ -63,7 +63,7 @@ for (let i = 1; i <= 12; i++) {
             // Manejar el envío de la contraseña
             submitPassword.addEventListener('click', function() {
                 const password = passwordInput.value;
-                if (password === '1234567890') { // Cambia esto por la contraseña deseada
+                if (password === '1647535136') { // Cambia esto por la contraseña deseada
                     window.location.href = 'final/final.html'; 
                 } else {
                     alert('Contraseña incorrecta. Inténtalo de nuevo.');

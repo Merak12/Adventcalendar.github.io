@@ -1,3 +1,5 @@
+/* Estilos existentes */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -11,7 +13,6 @@ body, html {
     flex-direction: column;
     position: relative;
 }
-
 
 #fireworksCanvas {
     position: absolute;
@@ -63,4 +64,33 @@ body, html {
     text-align: center;
     overflow-y: auto;
     max-height: 80%;
+}
+
+.floating-button {
+    position: fixed; /* Fija la posición en la esquina */
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #ff33c2; /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 50%; /* Forma circular */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    display: flex; /* Centra la flecha */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    font-size: 30px; /* Tamaño de la fuente para la flecha */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    box-shadow: 0 4px 8px rgba(173, 0, 81, 0.742); /* Sombra para dar profundidad */
+    transition: background-color 0.3s, transform 0.2s ease; /* Transición suave para efectos */
+    z-index: 4; /* Aseguramos que esté por encima de otros elementos */
+}
+
+.floating-button:hover {
+    background-color: #fdffff; 
+    transform: scale(1.1); 
+}
+
+.floating-button:active {
+    transform: scale(0.95); 
 }
